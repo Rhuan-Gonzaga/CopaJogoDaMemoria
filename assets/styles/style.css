@@ -11,6 +11,9 @@ img{
 .carta{
     height: 150px;
     width: 150px;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform .5s;
 }
 
 .cartaFrente,.cartaCostas{
@@ -20,11 +23,18 @@ img{
     justify-content: center;
     align-items: center;
     border-radius: 20px;
-    box-shadow: 10px 10px 10px rgba(0, 0, 0,0.45);    
+    box-shadow: 10px 10px 10px rgba(0, 0, 0,0.45);
+    position: absolute;
+    backface-visibility: hidden;    
+}
+
+.flip{
+    transform: rotateY(180deg);
 }
 
 .cartaFrente{
     background-color: green;
+    transform: rotateY(180deg);
 
 }
 
@@ -32,4 +42,5 @@ img{
     background-color: yellow;
     font-size: 30px;
     color: #101c2c;
+    display: none;
 }
