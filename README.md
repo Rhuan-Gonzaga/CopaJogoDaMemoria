@@ -1,1 +1,2 @@
-# JGMemoria
+# jogo da memoria
+## em desenvolvimento
