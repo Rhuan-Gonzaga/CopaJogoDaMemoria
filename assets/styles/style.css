@@ -3,6 +3,11 @@ body{
 
 }
 
+img{
+    width: 96px;
+    height: 96px;
+}
+
 .carta{
     height: 150px;
     width: 150px;
@@ -19,12 +24,12 @@ body{
 }
 
 .cartaFrente{
-    background-color: #101c2c;
+    background-color: green;
 
 }
 
 .cartaCostas{
-    background-color: #05c3ff;
+    background-color: yellow;
     font-size: 30px;
     color: #101c2c;
 }
