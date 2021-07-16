@@ -6,6 +6,11 @@
 
 body{
     font-family: 'Righteous', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
 
 }
 
@@ -59,7 +64,7 @@ img{
     background-color: rgba(0, 0, 0,0.9);
     color: white;
     font-size: 40px;
-   /*display: flex;*/
+    /*display: flex;*/
     display: none;
     justify-content: center;
     align-items: center;
@@ -69,8 +74,16 @@ img{
 #resetar{
     padding: 20px;
     font-size: 20px;
-    background-color: yellow;
+    background-color:rgb(4, 4, 194);
     border: none;
     border-radius: 10px;
     margin-top: 10px;
+}
+
+#mesa{
+    width: 700px;
+    display: grid;
+    grid-template: 1fr 1fr 1fr 1fr 1fr / 1fr 1fr 1fr 1fr;
+    gap: 20px;
+
 }
