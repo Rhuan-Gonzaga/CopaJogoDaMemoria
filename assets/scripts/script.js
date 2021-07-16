@@ -1,7 +1,7 @@
 const frente = "cartaFrente";
 const costas = "cartaCostas";
 
-times = [
+const times = [
     "alemanha",
     "argentina",
     "brasil",
@@ -14,9 +14,28 @@ times = [
     "potugal"
 ];
 
+let cartas = null;
+iniciarJogo();
 
-criarCartas = (time) =>{
-    cartas = [];
+function iniciarJogo(){
+    cartas = criarCartas(times);
+    embaralhar(cartas);
+    console.log(cartas)
+}
+
+function embaralhar (cartas) {
+    let currentindex = 10;
+    let randomindex = 0;
+
+    while (currentindex !== 0) {
+        randomindex = Math.floor(Math.random() * currentindex);
+        currentindex --;
+        [cartas[randomindex],cartas[currentindex]] = [cartas[currentindex],cartas[randomindex]];
+    }
+}
+
+function criarCartas () {
+    let cartas = [];
 
     for(let time of times){
         cartas.push(cartaTime(time));
@@ -25,11 +44,13 @@ criarCartas = (time) =>{
     return (cartas.flatMap(pair => pair))
 }
 
-cartaTime = (time) =>{
+function cartaTime (time) {
     return [{id: criarId(time),icon: time, flipped:false},{id: criarId(time),icon:time,flipped:false}];
 }
 
-criarId = (time) =>{
+function criarId (time) {
     return time + parseInt(Math.random() * 1000);
 }
+
+
 
