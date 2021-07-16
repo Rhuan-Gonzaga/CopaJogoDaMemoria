@@ -10,8 +10,9 @@ body{
     justify-content: center;
     align-items: center;
     height: 100vh;
-
-
+    background-color: rgb(5, 5, 105);
+    
+    
 }
 
 img{
@@ -50,7 +51,7 @@ img{
 }
 
 .cartaCostas{
-    background-color: yellow;
+    background-color:yellow;
     font-size: 30px;
     color: #101c2c;
     

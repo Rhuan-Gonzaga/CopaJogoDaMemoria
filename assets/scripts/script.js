@@ -11,7 +11,7 @@ const times = [
     "italia",
     "japao",
     "mexico",
-    "potugal"
+    "portugal"
 ];
 
 let cartas = null;
@@ -20,11 +20,53 @@ iniciarJogo();
 function iniciarJogo(){
     cartas = criarCartas(times);
     embaralhar(cartas);
-    console.log(cartas)
+    mostrarCartas(cartas);
+}
+
+function mostrarCartas(cartas){
+    let mesa = document.getElementById("mesa");
+
+    for(let carta of cartas){
+    
+        let cartaElemento = document.createElement("div");
+        cartaElemento.id = carta.id;
+        cartaElemento.classList.add("carta");
+        cartaElemento.dataset.icon = carta.icon;
+
+        cirarConteudoCarta(carta,cartaElemento);
+
+        cartaElemento.addEventListener("click",virarCarta)
+        mesa.appendChild(cartaElemento);
+     }
+}
+
+function cirarConteudoCarta(carta,cartaElemento)  {
+        criarApaCarta(frente,carta,cartaElemento);
+        criarApaCarta(costas,carta,cartaElemento);
+}
+
+function criarApaCarta(tipo,carta,elemento){
+    let tipoCarta = document.createElement("div");
+    tipoCarta.classList.add(tipo);
+    
+    if(tipo === frente){
+        let iconeElemento = document.createElement("img");
+        iconeElemento.classList.add("icone");
+        iconeElemento.src = "./assets/images/" + carta.icon + ".png";
+        tipoCarta.appendChild(iconeElemento);
+    }
+    else if(tipo === costas){
+        let iconeElemento = document.createElement("img");
+        iconeElemento.classList.add("icone");
+        iconeElemento.src = "./assets/images/tf.png";
+        tipoCarta.appendChild(iconeElemento);
+    }
+
+    elemento.appendChild(tipoCarta);
 }
 
 function embaralhar (cartas) {
-    let currentindex = 10;
+    let currentindex = 20;
     let randomindex = 0;
 
     while (currentindex !== 0) {
@@ -32,6 +74,8 @@ function embaralhar (cartas) {
         currentindex --;
         [cartas[randomindex],cartas[currentindex]] = [cartas[currentindex],cartas[randomindex]];
     }
+
+    
 }
 
 function criarCartas () {
@@ -52,5 +96,7 @@ function criarId (time) {
     return time + parseInt(Math.random() * 1000);
 }
 
-
+function virarCarta(){
+    this.classList.add("flip");
+}
 
