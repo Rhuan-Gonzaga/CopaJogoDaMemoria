@@ -1,32 +1,17 @@
 const frente = "cartaFrente";
 const costas = "cartaCostas";
 
-const times = [
-    "alemanha",
-    "argentina",
-    "brasil",
-    "espanha",
-    "franca",
-    "inglaterra",
-    "italia",
-    "japao",
-    "mexico",
-    "portugal"
-];
-
-let cartas = null;
 iniciarJogo();
 
 function iniciarJogo(){
-    cartas = criarCartas(times);
-    embaralhar(cartas);
-    mostrarCartas(cartas);
+    game.criarCartas(game.times);
+    mostrarCartas(game.cartas);
 }
 
 function mostrarCartas(cartas){
     let mesa = document.getElementById("mesa");
 
-    for(let carta of cartas){
+    for(let carta of game.cartas){
     
         let cartaElemento = document.createElement("div");
         cartaElemento.id = carta.id;
@@ -65,36 +50,6 @@ function criarApaCarta(tipo,carta,elemento){
     elemento.appendChild(tipoCarta);
 }
 
-function embaralhar (cartas) {
-    let currentindex = 20;
-    let randomindex = 0;
-
-    while (currentindex !== 0) {
-        randomindex = Math.floor(Math.random() * currentindex);
-        currentindex --;
-        [cartas[randomindex],cartas[currentindex]] = [cartas[currentindex],cartas[randomindex]];
-    }
-
-    
-}
-
-function criarCartas () {
-    let cartas = [];
-
-    for(let time of times){
-        cartas.push(cartaTime(time));
-    }
-
-    return (cartas.flatMap(pair => pair))
-}
-
-function cartaTime (time) {
-    return [{id: criarId(time),icon: time, flipped:false},{id: criarId(time),icon:time,flipped:false}];
-}
-
-function criarId (time) {
-    return time + parseInt(Math.random() * 1000);
-}
 
 function virarCarta(){
     this.classList.add("flip");
