@@ -1,7 +1,7 @@
 ## Demo :joystick:	
 <img src="https://github.com/Rhuan-Gonzaga/CopaJogoDaMemoria/blob/main/assets/images/projeto.png" width="990px" align="center">
 
-Link da página do projeto: 
+Link da página do projeto: https://jogodamemoria-copa.netlify.app/
 ## :brain: Sobre o projeto:
 Jogo da memoria com os times da copa.
 
