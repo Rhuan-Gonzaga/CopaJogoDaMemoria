@@ -65,7 +65,6 @@ img{
     background-color: rgba(0, 0, 0,0.9);
     color: white;
     font-size: 40px;
-    /*display: flex;*/
     display: none;
     justify-content: center;
     align-items: center;
@@ -87,4 +86,191 @@ img{
     grid-template: 1fr 1fr 1fr 1fr 1fr / 1fr 1fr 1fr 1fr;
     gap: 20px;
 
+}
+
+@media (max-width: 1366px){
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    body{
+        font-family: 'Righteous', sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: rgb(5, 5, 105);
+        
+        
+    }
+    
+    img{
+        width: 75px;
+        height: 75px;
+    }
+    
+    .carta{
+        height: 80px;
+        width: 80px;
+        position: relative;
+        transform-style: preserve-3d;
+        transition: transform .5s;
+    }
+    
+    .cartaFrente,.cartaCostas{
+        width: 130%;
+        height: 130%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 20px;
+        box-shadow: 10px 10px 10px rgba(0, 0, 0,0.45);
+        position: absolute;
+        backface-visibility: hidden;    
+    }
+    
+    .flip{
+        transform: rotateY(180deg);
+        align-items: center;
+    }
+    
+    .cartaFrente{
+        background-color: green;
+        transform: rotateY(180deg);
+    
+    }
+    
+    .cartaCostas{
+        background-color:yellow;
+        font-size: 30px;
+        color: #101c2c;
+        
+    }
+    
+    #fimJogo{
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0,0.9);
+        color: white;
+        font-size: 50px;
+        display: none;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    
+    #resetar{
+        padding: 20px;
+        font-size: 40px;
+        background-color:rgb(4, 4, 194);
+        border: none;
+        border-radius: 10px;
+        margin-top: 10px;
+    }
+    
+    #mesa{
+        width: auto;
+        display: grid;
+        grid-template: 1fr 1fr 1fr 1fr 1fr / 1fr 1fr 1fr 1fr;
+        gap: 50px;
+    
+    }
+}
+
+/*MOOOBILE*/
+@media only screen and (min-width : 320px) and (max-width:415px) {
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    body{
+        font-family: 'Righteous', sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: rgb(5, 5, 105);
+        
+        
+    }
+    
+    img{
+        width: 45px;
+        height: 45px;
+    }
+    
+    .carta{
+        height: 50px;
+        width: 50px;
+        position: relative;
+        transform-style: preserve-3d;
+        transition: transform .5s;
+    }
+    
+    .cartaFrente,.cartaCostas{
+        width: 120%;
+        height: 120%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 20px;
+        box-shadow: 5px 5px 5px rgba(0, 0, 0,0.45);
+        position: absolute;
+        backface-visibility: hidden;    
+    }
+    
+    .flip{
+        transform: rotateY(180deg);
+    }
+    
+    .cartaFrente{
+        background-color: green;
+        transform: rotateY(180deg);
+    
+    }
+    
+    .cartaCostas{
+        background-color:yellow;
+        font-size: 30px;
+        color: #101c2c;
+        
+    }
+    
+    #fimJogo{
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0,0.9);
+        color: white;
+        font-size: 40px;
+        display: none;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    
+    #resetar{
+        padding: 20px;
+        font-size: 20px;
+        background-color:rgb(4, 4, 194);
+        border: none;
+        border-radius: 10px;
+        margin-top: 10px;
+    }
+    
+    #mesa{
+        width: auto;
+        display: grid;
+        grid-template: 1fr 1fr 1fr 1fr 1fr / 1fr 1fr 1fr 1fr;
+        gap: 25px;
+        
+    
+    }
 }

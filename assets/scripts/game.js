@@ -45,6 +45,11 @@ let game = {
         this.limparCartas();
     },  
 
+    fim(){
+        
+        return this.cartas.filter(carta=>!carta.flipped).length == 0;
+    },
+
     times: [
         "alemanha",
         "argentina",
@@ -82,8 +87,8 @@ let game = {
     },
 
      embaralhar: function () {
-        let currentindex = 20;
-        let randomindex = 0;
+        var currentindex = 20;
+        var randomindex = 0;
     
         while (currentindex !== 0) {
             randomindex = Math.floor(Math.random() * currentindex);

@@ -10,6 +10,7 @@ function iniciarJogo(){
 
 function mostrarCartas(){
     let mesa = document.getElementById("mesa");
+    mesa.innerHTML = '';
 
     for(let carta of game.cartas){
     
@@ -59,6 +60,10 @@ function virarCarta(){
         if(game.segundaCarta){
             if(game.checar()){
                game.limparCartas();
+              if(game.fim()){
+                let f = document.getElementById("fimJogo");
+                  f.style.display = "flex";
+                }
             }else{
 
                 setTimeout(()=> {
@@ -74,5 +79,13 @@ function virarCarta(){
         }
     }
     
+}
+
+function resetar(){
+    game.limparCartas();
+    iniciarJogo();
+    let f = document.getElementById("fimJogo");
+    f.style.display = "none";
+
 }
 
