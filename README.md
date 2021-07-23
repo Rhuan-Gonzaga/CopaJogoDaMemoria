@@ -1,5 +1,5 @@
 ## Demo :joystick:	
-<img src="https://github.com/Rhuan-Gonzaga/CopaJogoDaMemoria/blob/main/assets/images/projeto.png" width="500px" align="center">
+<img src="https://github.com/Rhuan-Gonzaga/CopaJogoDaMemoria/blob/main/assets/images/projeto.png" width="950px" align="center">
 
 Link da página do projeto: 
 ## :brain: Sobre o projeto:
