@@ -1,5 +1,38 @@
 let game = {
 
+    modo: false,
+    primeiraCarta: null,
+    segundaCarta: null,
+
+    escolhaCarta: function(id){
+        let carta = this.cartas.filter(carta=>carta.id==id)[0];
+        
+        if(carta.flipped || this.modo){
+            return false;
+        }
+
+        if(!this.primeiraCarta){
+            this.primeiraCarta = carta;
+            return true;
+        }
+        else{
+            this.segundaCarta = carta;
+            this.mode = true;
+            return true;
+        }
+    },
+
+    checar: function(){
+        return this.primeiraCarta.icon == this.segundaCarta.icon;
+
+    },
+
+    limparCartas: function (){
+        this.primeiraCarta = null;
+        this.segundaCarta = null;
+        modo = false;
+    },
+
     times: [
         "alemanha",
         "argentina",
@@ -36,7 +69,7 @@ let game = {
         return time + parseInt(Math.random() * 1000);
     },
 
-     embaralhar: function (cartas) {
+     embaralhar: function () {
         let currentindex = 20;
         let randomindex = 0;
     

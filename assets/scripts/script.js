@@ -8,7 +8,7 @@ function iniciarJogo(){
     mostrarCartas(game.cartas);
 }
 
-function mostrarCartas(cartas){
+function mostrarCartas(){
     let mesa = document.getElementById("mesa");
 
     for(let carta of game.cartas){
@@ -52,6 +52,24 @@ function criarApaCarta(tipo,carta,elemento){
 
 
 function virarCarta(){
-    this.classList.add("flip");
+
+    if(game.escolhaCarta(this.id)){
+        this.classList.add("flip");
+        if(game.checar()){
+            game.limparCartas();
+        }else{
+
+            setTimeout(()=> {
+                let visualPrimeiraCarta = document.getElementById(game.primeiraCarta.id);
+                let visualSegundaCarta = document.getElementById(game.segundaCarta.id);
+
+                visualPrimeiraCarta.classList.remove("flip");
+                visualSegundaCarta.classList.remove("flip");
+                game.limparCartas();
+            },1000);
+            
+        }
+    }
+    
 }
 
