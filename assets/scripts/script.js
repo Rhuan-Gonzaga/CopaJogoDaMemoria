@@ -60,9 +60,12 @@ function virarCarta(){
         if(game.segundaCarta){
             if(game.checar()){
                game.limparCartas();
-              if(game.fim()){
-                let f = document.getElementById("fimJogo");
-                  f.style.display = "flex";
+             if(game.fim()){
+                    setTimeout(()=>{
+                    let f = document.getElementById("fimJogo");
+                    f.style.display = "flex";
+                    },1000)
+                
                 }
             }else{
 
@@ -73,7 +76,7 @@ function virarCarta(){
                     visualPrimeiraCarta.classList.remove("flip");
                     visualSegundaCarta.classList.remove("flip");
                     game.cartaVirada();
-                },1000);
+                },950);
                 
             }
         }
