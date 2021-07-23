@@ -55,19 +55,22 @@ function virarCarta(){
 
     if(game.escolhaCarta(this.id)){
         this.classList.add("flip");
-        if(game.checar()){
-            game.limparCartas();
-        }else{
 
-            setTimeout(()=> {
-                let visualPrimeiraCarta = document.getElementById(game.primeiraCarta.id);
-                let visualSegundaCarta = document.getElementById(game.segundaCarta.id);
+        if(game.segundaCarta){
+            if(game.checar()){
+               game.limparCartas();
+            }else{
 
-                visualPrimeiraCarta.classList.remove("flip");
-                visualSegundaCarta.classList.remove("flip");
-                game.limparCartas();
-            },1000);
-            
+                setTimeout(()=> {
+                    let visualPrimeiraCarta = document.getElementById(game.primeiraCarta.id);
+                    let visualSegundaCarta = document.getElementById(game.segundaCarta.id);
+
+                    visualPrimeiraCarta.classList.remove("flip");
+                    visualSegundaCarta.classList.remove("flip");
+                    game.cartaVirada();
+                },1000);
+                
+            }
         }
     }
     

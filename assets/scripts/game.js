@@ -13,16 +13,22 @@ let game = {
 
         if(!this.primeiraCarta){
             this.primeiraCarta = carta;
+            this.primeiraCarta.flipped = true;
             return true;
         }
         else{
             this.segundaCarta = carta;
+            this.segundaCarta.flipped = true;
             this.mode = true;
             return true;
         }
     },
 
     checar: function(){
+
+        if(!this.primeiraCarta || !this.segundaCarta){
+            return false;
+        }
         return this.primeiraCarta.icon == this.segundaCarta.icon;
 
     },
@@ -32,6 +38,12 @@ let game = {
         this.segundaCarta = null;
         modo = false;
     },
+
+    cartaVirada: function (){
+        this.primeiraCarta.flipped = false;
+        this.segundaCarta.flipped = false;
+        this.limparCartas();
+    },  
 
     times: [
         "alemanha",
